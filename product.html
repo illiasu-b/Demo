@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Product — StyleNest</title>
+<meta name="description" id="pageDescription" content="Shop premium fashion at StyleNest.">
+<meta property="og:title" id="ogTitle" content="StyleNest">
+<meta property="og:description" id="ogDescription" content="Shop premium fashion at StyleNest.">
+<meta property="og:type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="pageLoader"><div class="loader-spinner"></div></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Nest</span><small class="logo-tagline">Modern Fashion for Every Style</small></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <button class="icon-btn" onclick="toggleSearchBox()" aria-label="Search">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <a href="#" class="icon-btn" title="Wishlist">♡<span class="badge-count" data-wishlist-count>0</span></a>
+      <button class="icon-btn" onclick="toggleCartDrawer()" title="Cart">🛍<span class="badge-count" data-cart-count>0</span></button>
+      <button class="icon-btn" data-theme-toggle title="Toggle dark mode">🌙</button>
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="container" style="padding-top:40px;">
+  <div id="productDetailRoot" class="product-detail"></div>
+</div>
+
+<section class="section" id="relatedSection">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">You May Also Like</span>
+      <h2>Related Products</h2>
+    </div>
+    <div class="product-grid" id="relatedGrid"></div>
+  </div>
+</section>
+
+<section class="sales-cta">
+  <h2>Need a Website Like This?</h2>
+  <p>We create professional websites for fashion stores, supermarkets, pharmacies and growing businesses.</p>
+  <a href="contact.html" class="btn btn-primary">Request Your Website</a>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-logo">StyleNest</span>
+        <p>Modern fashion for every style. Curated pieces for men, women and kids, delivered to your door.</p>
+        <div class="social-links"><a href="#">IG</a><a href="#">FB</a><a href="#">TT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul><li><a href="shop.html?section=Men">Men</a></li><li><a href="shop.html?section=Women">Women</a></li><li><a href="shop.html?section=Kids">Kids</a></li><li><a href="shop.html?section=Accessories">Accessories</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Accra, Ghana</p>
+        <p>✉️ hello@stylenest.com</p>
+        <p>📞 +2334018670</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 StyleNest. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header"><h3>Your Cart</h3><button class="icon-btn" onclick="toggleCartDrawer()" aria-label="Close cart">✕</button></div>
+  <div class="cart-items-list" id="cartItemsList"></div>
+  <div class="cart-empty-state" id="cartEmptyState"><div class="icon">🛍</div><p>Your cart is empty</p></div>
+  <div class="cart-summary" id="cartSummary" style="display:none;"></div>
+</aside>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item" data-nav-link><span class="icon">⌂</span>Home</a>
+    <a href="shop.html" class="bottom-nav-item" data-nav-link><span class="icon">🛒</span>Shop</a>
+    <a href="#" class="bottom-nav-item"><span class="icon">♡</span>Wishlist<span class="badge-count" data-wishlist-count>0</span></a>
+    <button class="bottom-nav-item" onclick="toggleCartDrawer()"><span class="icon">🛍</span>Cart<span class="badge-count" data-cart-count>0</span></button>
+    <a href="contact.html" class="bottom-nav-item"><span class="icon">👤</span>Account</a>
+  </div>
+</nav>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const productId = new URLSearchParams(window.location.search).get('id');
+  const product = getProductById(productId);
+  let selectedSize = '';
+  let selectedColor = '';
+  let qty = 1;
+
+  if (!product) {
+    document.getElementById('productDetailRoot').innerHTML = `
+      <div class="results-empty" style="grid-column:1/-1;">
+        <div class="icon">🔍</div>
+        <h3>Product not found</h3>
+        <p>This item may have been removed. <a href="shop.html">Return to shop</a></p>
+      </div>
+    `;
+  } else {
+    document.getElementById('pageTitle').textContent = `${product.name} — StyleNest`;
+    document.getElementById('pageDescription').setAttribute('content', product.description);
+    document.getElementById('ogTitle').setAttribute('content', `${product.name} — StyleNest`);
+    document.getElementById('ogDescription').setAttribute('content', product.description);
+
+    selectedSize = product.sizes[0] || '';
+    selectedColor = product.colors[0] || '';
+
+    function render() {
+      document.getElementById('productDetailRoot').innerHTML = `
+        <div class="pd-gallery">
+          <div class="gallery-main"><img src="${product.image}" alt="${product.name}" id="galleryMainImg"></div>
+        </div>
+        <div class="pd-info">
+          <p class="pd-category">${product.section} · ${product.category}</p>
+          <h1 class="pd-title">${product.name}</h1>
+          <div class="pd-rating">${renderStars(product.rating)}<span class="review-count">${product.rating} (${product.reviews} reviews)</span></div>
+          <div class="pd-price">
+            <span class="price-current">${formatPrice(product.price)}</span>
+            <span class="price-old">${formatPrice(product.oldPrice)}</span>
+            <span class="discount-badge" style="position:static;">-${product.discount}%</span>
+          </div>
+          <p class="pd-description">${product.description}</p>
+
+          ${product.sizes.length ? `
+          <div class="option-group">
+            <label class="option-label">Size</label>
+            <div class="option-values" id="sizeOptions">
+              ${product.sizes.map(s => `<button class="option-swatch ${s === selectedSize ? 'selected' : ''}" data-size="${s}">${s}</button>`).join('')}
+            </div>
+          </div>` : ''}
+
+          ${product.colors.length ? `
+          <div class="option-group">
+            <label class="option-label">Color</label>
+            <div class="option-values" id="colorOptions">
+              ${product.colors.map(c => `<button class="option-swatch ${c === selectedColor ? 'selected' : ''}" data-color="${c}">${c}</button>`).join('')}
+            </div>
+          </div>` : ''}
+
+          <div class="option-group">
+            <label class="option-label">Quantity</label>
+            <div class="qty-selector">
+              <button id="qtyMinus">−</button>
+              <span id="qtyValue">${qty}</span>
+              <button id="qtyPlus">+</button>
+            </div>
+          </div>
+
+          <div class="pd-actions">
+            <button class="btn btn-dark" id="addToCartBtn">Add to Cart</button>
+            <button class="btn whatsapp-btn" id="whatsappBtn">💬 Buy on WhatsApp</button>
+          </div>
+          <button class="circle-btn" data-wishlist-btn="${product.id}" onclick="toggleWishlist(${product.id})" style="width:auto; padding:10px 16px; border-radius:8px; gap:8px; display:inline-flex;">
+            ♡ <span>Add to Wishlist</span>
+          </button>
+
+          <div class="pd-meta-row" style="margin-top:24px;">
+            <span>📦 In stock: ${product.stock}</span>
+            <span>🚚 Free shipping over GH₵75</span>
+            <span>↩️ 30-day returns</span>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll('#sizeOptions .option-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedSize = btn.dataset.size;
+          document.querySelectorAll('#sizeOptions .option-swatch').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+      document.querySelectorAll('#colorOptions .option-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedColor = btn.dataset.color;
+          document.querySelectorAll('#colorOptions .option-swatch').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+
+      document.getElementById('qtyMinus').addEventListener('click', () => { if (qty > 1) { qty--; document.getElementById('qtyValue').textContent = qty; } });
+      document.getElementById('qtyPlus').addEventListener('click', () => { qty++; document.getElementById('qtyValue').textContent = qty; });
+
+      document.getElementById('addToCartBtn').addEventListener('click', () => addToCart(product.id, selectedSize, selectedColor, qty));
+
+      document.getElementById('whatsappBtn').addEventListener('click', () => {
+        const message = `Hello, I want to order:\n\n${product.name}${selectedSize ? ` (Size: ${selectedSize})` : ''}${selectedColor ? ` (${selectedColor})` : ''} x${qty} — ${formatPrice(product.price * qty)}`;
+        const phone = '10000000000'; // TODO: replace with the store's real WhatsApp number
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+      });
+
+      updateWishlistButtons();
+    }
+
+    render();
+
+    // Related products
+    const related = getRelatedProducts(product, 4);
+    document.getElementById('relatedGrid').innerHTML = related.map(p => `
+      <div class="product-card">
+        <div class="product-card-media">
+          <a href="product.html?id=${p.id}"><img src="${p.image}" alt="${p.name}" loading="lazy"></a>
+          <span class="discount-badge">-${p.discount}%</span>
+        </div>
+        <div class="product-card-body">
+          <p class="product-card-category">${p.section} · ${p.category}</p>
+          <h3 class="product-card-name">${p.name}</h3>
+          ${renderStars(p.rating)}<span class="review-count">(${p.reviews})</span>
+          <div class="price-row"><span class="price-current">${formatPrice(p.price)}</span><span class="price-old">${formatPrice(p.oldPrice)}</span></div>
+          <button class="add-to-cart-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    `).join('');
+  }
+</script>
+</body>
+</html>

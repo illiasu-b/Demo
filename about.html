@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — StyleNest</title>
+<meta name="description" content="Learn about StyleNest's story, mission and commitment to bringing premium, accessible fashion to customers everywhere.">
+<meta property="og:title" content="About Us — StyleNest">
+<meta property="og:description" content="Learn about StyleNest's story, mission and commitment to bringing premium, accessible fashion to customers everywhere.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="pageLoader"><div class="loader-spinner"></div></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Nest</span><small class="logo-tagline">Modern Fashion for Every Style</small></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <button class="icon-btn" onclick="toggleSearchBox()" aria-label="Search">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <a href="#" class="icon-btn" title="Wishlist">♡<span class="badge-count" data-wishlist-count>0</span></a>
+      <button class="icon-btn" onclick="toggleCartDrawer()" title="Cart">🛍<span class="badge-count" data-cart-count>0</span></button>
+      <button class="icon-btn" data-theme-toggle title="Toggle dark mode">🌙</button>
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero fade-in-on-scroll visible">
+  <span class="section-eyebrow">Our Story</span>
+  <h1>Fashion, Made Personal</h1>
+  <p>StyleNest started with a simple idea: everyone deserves clothing that feels like it was made for them — without the premium price tag. Today we serve customers across the country with pieces chosen for quality, fit and lasting style.</p>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="mission-grid fade-in-on-scroll">
+      <div class="mission-card">
+        <h3>🎯 Our Mission</h3>
+        <p>To make premium fashion accessible — curating pieces that combine quality craftsmanship with everyday wearability, at a price that respects our customers.</p>
+      </div>
+      <div class="mission-card">
+        <h3>🔭 Our Vision</h3>
+        <p>To become the go-to fashion destination for individuals who value quality, style and a shopping experience that feels personal from browse to delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll">
+      <span class="section-eyebrow">By the Numbers</span>
+      <h2>Trusted by Thousands</h2>
+    </div>
+    <div class="stats-grid fade-in-on-scroll">
+      <div><div class="stat-number">10,000+</div><div class="stat-label">Happy Customers</div></div>
+      <div><div class="stat-number">5,000+</div><div class="stat-label">Orders Delivered</div></div>
+      <div><div class="stat-number">24/7</div><div class="stat-label">Customer Support</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sales-cta">
+  <h2>Need a Website Like This?</h2>
+  <p>We create professional websites for fashion stores, supermarkets, pharmacies and growing businesses.</p>
+  <a href="contact.html" class="btn btn-primary">Request Your Website</a>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-logo">StyleNest</span>
+        <p>Modern fashion for every style. Curated pieces for men, women and kids, delivered to your door.</p>
+        <div class="social-links"><a href="#">IG</a><a href="#">FB</a><a href="#">TT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul><li><a href="shop.html?section=Men">Men</a></li><li><a href="shop.html?section=Women">Women</a></li><li><a href="shop.html?section=Kids">Kids</a></li><li><a href="shop.html?section=Accessories">Accessories</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Accra, Ghana</p>
+        <p>✉️ hello@stylenest.com</p>
+        <p>📞 +233204018670</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 StyleNest. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header"><h3>Your Cart</h3><button class="icon-btn" onclick="toggleCartDrawer()" aria-label="Close cart">✕</button></div>
+  <div class="cart-items-list" id="cartItemsList"></div>
+  <div class="cart-empty-state" id="cartEmptyState"><div class="icon">🛍</div><p>Your cart is empty</p></div>
+  <div class="cart-summary" id="cartSummary" style="display:none;"></div>
+</aside>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item" data-nav-link><span class="icon">⌂</span>Home</a>
+    <a href="shop.html" class="bottom-nav-item" data-nav-link><span class="icon">🛒</span>Shop</a>
+    <a href="#" class="bottom-nav-item"><span class="icon">♡</span>Wishlist<span class="badge-count" data-wishlist-count>0</span></a>
+    <button class="bottom-nav-item" onclick="toggleCartDrawer()"><span class="icon">🛍</span>Cart<span class="badge-count" data-cart-count>0</span></button>
+    <a href="contact.html" class="bottom-nav-item"><span class="icon">👤</span>Account</a>
+  </div>
+</nav>
+
+<script src="products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

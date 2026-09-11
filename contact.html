@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — StyleNest</title>
+<meta name="description" content="Get in touch with StyleNest — questions about orders, sizing, returns, or requesting a website for your own store.">
+<meta property="og:title" content="Contact Us — StyleNest">
+<meta property="og:description" content="Get in touch with StyleNest — orders, sizing, returns, or requesting a website for your own store.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="pageLoader"><div class="loader-spinner"></div></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Nest</span><small class="logo-tagline">Modern Fashion for Every Style</small></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <button class="icon-btn" onclick="toggleSearchBox()" aria-label="Search">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <a href="#" class="icon-btn" title="Wishlist">♡<span class="badge-count" data-wishlist-count>0</span></a>
+      <button class="icon-btn" onclick="toggleCartDrawer()" title="Cart">🛍<span class="badge-count" data-cart-count>0</span></button>
+      <button class="icon-btn" data-theme-toggle title="Toggle dark mode">🌙</button>
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll visible">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Questions about an order, sizing, or interested in a website for your own store? Reach out below.</p>
+    </div>
+
+    <div class="contact-grid fade-in-on-scroll visible">
+      <div class="contact-form-card">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Full Name</label>
+            <input type="text" id="contactName" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" placeholder="e.g. Order question, Website request">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info-card">
+        <a href="https://wa.me/0204018670" target="_blank" rel="noopener" class="btn whatsapp-btn btn-block">💬 Chat With Us on WhatsApp</a>
+
+        <div class="info-block">
+          <span class="icon">✉️</span>
+          <div><h4>Email</h4><p>hello@stylenest.com</p></div>
+        </div>
+        <div class="info-block">
+          <span class="icon">📞</span>
+          <div><h4>Phone</h4><p>+233204018670</p></div>
+        </div>
+        <div class="info-block">
+          <span class="icon">🕐</span>
+          <div><h4>Business Hours</h4><p>Mon–Sat: 9am – 7pm<br>Sunday: Closed</p></div>
+        </div>
+        <div class="info-block">
+          <span class="icon">📍</span>
+          <div><h4>Location</h4><p>Accra, Ghana</p></div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.34%2C6.44%2C3.44%2C6.54&layer=mapnik" width="100%" height="100%" style="border:0;" loading="lazy" title="Store location map"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sales-cta">
+  <h2>Need a Website Like This?</h2>
+  <p>We create professional websites for fashion stores, supermarkets, pharmacies and growing businesses.</p>
+  <a href="#contactForm" class="btn btn-primary">Request Your Website</a>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-logo">StyleNest</span>
+        <p>Modern fashion for every style. Curated pieces for men, women and kids, delivered to your door.</p>
+        <div class="social-links"><a href="#">IG</a><a href="#">FB</a><a href="#">TT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul><li><a href="shop.html?section=Men">Men</a></li><li><a href="shop.html?section=Women">Women</a></li><li><a href="shop.html?section=Kids">Kids</a></li><li><a href="shop.html?section=Accessories">Accessories</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 East Legon, Accra, Ghana</p>
+        <p>✉️ hello@stylenest.com</p>
+        <p>📞 +233204018670</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 StyleNest. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header"><h3>Your Cart</h3><button class="icon-btn" onclick="toggleCartDrawer()" aria-label="Close cart">✕</button></div>
+  <div class="cart-items-list" id="cartItemsList"></div>
+  <div class="cart-empty-state" id="cartEmptyState"><div class="icon">🛍</div><p>Your cart is empty</p></div>
+  <div class="cart-summary" id="cartSummary" style="display:none;"></div>
+</aside>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item" data-nav-link><span class="icon">⌂</span>Home</a>
+    <a href="shop.html" class="bottom-nav-item" data-nav-link><span class="icon">🛒</span>Shop</a>
+    <a href="#" class="bottom-nav-item"><span class="icon">♡</span>Wishlist<span class="badge-count" data-wishlist-count>0</span></a>
+    <button class="bottom-nav-item" onclick="toggleCartDrawer()"><span class="icon">🛍</span>Cart<span class="badge-count" data-cart-count>0</span></button>
+    <a href="contact.html" class="bottom-nav-item"><span class="icon">👤</span>Account</a>
+  </div>
+</nav>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

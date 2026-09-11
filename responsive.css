@@ -1,0 +1,390 @@
+/* ==========================================
+   TABLETS (992px)
+========================================== */
+
+@media (max-width:992px){
+
+    header .container{
+        padding:15px 4%;
+    }
+
+    nav{
+        gap:20px;
+    }
+
+    .hero{
+        height:75vh;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .category-grid,
+    .product-grid,
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE (768px)
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+        padding-bottom:75px;
+    }
+
+    header{
+        padding:0;
+    }
+
+    header .container{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+        padding:15px;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+        font-size:28px;
+    }
+
+    /* Bottom Navigation */
+
+    nav{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:65px;
+        background:#fff;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        box-shadow:0 -5px 20px rgba(0,0,0,.12);
+        z-index:1000;
+    }
+
+    nav a{
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+        font-size:13px;
+        font-weight:600;
+
+    }
+
+    nav a::before{
+
+        font-family:"Font Awesome 6 Free";
+        font-weight:900;
+        font-size:18px;
+        margin-bottom:4px;
+
+    }
+
+    nav a:nth-child(1)::before{
+        content:"\f015";
+    }
+
+    nav a:nth-child(2)::before{
+        content:"\f07a";
+    }
+
+    nav a:nth-child(3)::before{
+        content:"\f05a";
+    }
+
+    nav a:nth-child(4)::before{
+        content:"\f0e0";
+    }
+
+    .icons{
+
+        justify-content:center;
+        width:100%;
+
+    }
+
+    .hero{
+
+        margin-top:150px;
+        height:65vh;
+
+    }
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .btn{
+
+        padding:15px 28px;
+
+    }
+
+    section{
+
+        padding:70px 20px;
+
+    }
+
+    section h2{
+
+        font-size:30px;
+
+    }
+
+    .category-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .category{
+
+        padding:25px 15px;
+
+        font-size:40px;
+
+    }
+
+    .category h3{
+
+        font-size:18px;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:18px;
+
+    }
+
+    .product img{
+
+        height:220px;
+
+    }
+
+    .info{
+
+        padding:15px;
+
+    }
+
+    .info h3{
+
+        font-size:17px;
+
+    }
+
+    .price{
+
+        font-size:21px;
+
+    }
+
+    .info button{
+
+        padding:12px;
+
+        font-size:15px;
+
+    }
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .testimonial p{
+
+        font-size:18px;
+
+        width:95%;
+
+    }
+
+    .newsletter-box{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .newsletter input{
+
+        width:100%;
+
+    }
+
+    .newsletter button{
+
+        width:100%;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:35px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL PHONES (576px)
+========================================== */
+
+@media (max-width:576px){
+
+    .hero{
+
+        height:60vh;
+
+    }
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .product-grid{
+
+        gap:15px;
+
+    }
+
+    .product img{
+
+        height:180px;
+
+    }
+
+    .info h3{
+
+        font-size:15px;
+
+    }
+
+    .price{
+
+        font-size:18px;
+
+    }
+
+    .category{
+
+        font-size:34px;
+
+    }
+
+    .category h3{
+
+        font-size:16px;
+
+    }
+
+}
+
+
+/* ==========================================
+   EXTRA SMALL DEVICES (400px)
+========================================== */
+
+@media (max-width:400px){
+
+    .hero{
+
+        margin-top:165px;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .category-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+    .icons{
+
+        gap:18px;
+
+        font-size:18px;
+
+    }
+
+}

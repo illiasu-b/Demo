@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StyleNest — Modern Fashion for Every Style</title>
+<meta name="description" content="StyleNest is a premium fashion store for men, women and kids. Shop new arrivals, trending styles and everyday essentials with fast delivery and easy returns.">
+<meta property="og:title" content="StyleNest — Modern Fashion for Every Style">
+<meta property="og:description" content="Discover premium fashion for men, women and kids at StyleNest.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Style<span>Nest</span></a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box" id="searchBox">
+        <button class="icon-btn" onclick="toggleSearchBox()" aria-label="Search">🔍</button>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <a href="#" class="icon-btn" title="Wishlist">
+        ♡<span class="badge-count" data-wishlist-count>0</span>
+      </a>
+      <button class="icon-btn" onclick="toggleCartDrawer()" title="Cart">
+        🛍<span class="badge-count" data-cart-count>0</span>
+      </button>
+      <button class="icon-btn" data-theme-toggle title="Toggle dark mode">🌙</button>
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content fade-in-on-scroll visible">
+      <span class="hero-eyebrow">New Season Arrivals</span>
+      <h1>Dress Better. Feel Better.</h1>
+      <p>Discover premium fashion for men, women and kids — curated pieces built to last, styled to stand out.</p>
+      <div class="hero-buttons">
+        <a href="shop.html" class="btn btn-primary">Shop Collection</a>
+        <a href="#categories" class="btn btn-outline">Explore Categories</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll">
+      <span class="section-eyebrow">Shop by Category</span>
+      <h2>Find Your Fit</h2>
+      <p>From everyday staples to statement pieces — shop every category in one place.</p>
+    </div>
+    <div class="category-grid fade-in-on-scroll">
+      <a href="shop.html?section=Men" class="category-card">
+        <img src="https://picsum.photos/seed/sn-cat-men/400/540" alt="Men's fashion" loading="lazy">
+        <div class="category-card-label"><span>Men</span></div>
+      </a>
+      <a href="shop.html?section=Women" class="category-card">
+        <img src="https://picsum.photos/seed/sn-cat-women/400/540" alt="Women's fashion" loading="lazy">
+        <div class="category-card-label"><span>Women</span></div>
+      </a>
+      <a href="shop.html?section=Kids" class="category-card">
+        <img src="https://picsum.photos/seed/sn-cat-kids/400/540" alt="Kids fashion" loading="lazy">
+        <div class="category-card-label"><span>Kids</span></div>
+      </a>
+      <a href="shop.html?section=Shoes" class="category-card">
+        <img src="https://picsum.photos/seed/sn-cat-shoes/400/540" alt="Shoes" loading="lazy">
+        <div class="category-card-label"><span>Shoes</span></div>
+      </a>
+      <a href="shop.html?section=Accessories" class="category-card">
+        <img src="https://picsum.photos/seed/sn-cat-acc/400/540" alt="Accessories" loading="lazy">
+        <div class="category-card-label"><span>Accessories</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll">
+      <span class="section-eyebrow">Handpicked</span>
+      <h2>Featured Products</h2>
+      <p>This season's most-loved pieces, chosen by our style editors.</p>
+    </div>
+    <div class="product-grid fade-in-on-scroll" id="featuredProductsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll">
+      <span class="section-eyebrow">Why StyleNest</span>
+      <h2>Shop With Confidence</h2>
+    </div>
+    <div class="why-grid fade-in-on-scroll">
+      <div class="why-card"><div class="why-icon">🚚</div><h3>Fast Delivery</h3><p>Orders shipped within 24 hours, tracked door to door.</p></div>
+      <div class="why-card"><div class="why-icon">🔒</div><h3>Secure Payment</h3><p>Checkout with confidence using encrypted payment options.</p></div>
+      <div class="why-card"><div class="why-icon">↩️</div><h3>Easy Returns</h3><p>30-day hassle-free returns on every order.</p></div>
+      <div class="why-card"><div class="why-icon">✨</div><h3>Premium Quality</h3><p>Every piece is quality-checked before it reaches you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header fade-in-on-scroll">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2>Loved by Our Customers</h2>
+    </div>
+    <div class="testimonial-slider fade-in-on-scroll">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <span class="stars">★★★★★</span>
+          <p class="testimonial-text">"The quality completely surprised me for the price. My hoodie still looks brand new after months of wear."</p>
+          <p class="testimonial-author">Amara K.</p>
+          <p class="testimonial-role">Verified Buyer</p>
+        </div>
+        <div class="testimonial-slide">
+          <span class="stars">★★★★★</span>
+          <p class="testimonial-text">"Fast shipping, easy returns, and the sizing chart was spot on. StyleNest is my go-to now."</p>
+          <p class="testimonial-author">Daniel O.</p>
+          <p class="testimonial-role">Verified Buyer</p>
+        </div>
+        <div class="testimonial-slide">
+          <span class="stars">★★★★★</span>
+          <p class="testimonial-text">"Ordered a dress for an event with two days notice — it arrived the next day and fit perfectly."</p>
+          <p class="testimonial-author">Priya S.</p>
+          <p class="testimonial-role">Verified Buyer</p>
+        </div>
+      </div>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section-tight">
+  <div class="newsletter-section fade-in-on-scroll">
+    <h2>Stay In Style</h2>
+    <p>Sign up for 10% off your first order plus early access to new drops.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SALES CTA ============ -->
+<section class="sales-cta">
+  <h2>Need a Website Like This?</h2>
+  <p>We create professional websites for fashion stores, supermarkets, pharmacies and growing businesses.</p>
+  <a href="contact.html" class="btn btn-primary">Request Your Website</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-logo">StyleNest</span>
+        <p>Modern fashion for every style. Curated pieces for men, women and kids, delivered to your door.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html?section=Men">Men</a></li>
+          <li><a href="shop.html?section=Women">Women</a></li>
+          <li><a href="shop.html?section=Kids">Kids</a></li>
+          <li><a href="shop.html?section=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 12 Fashion Ave, Lagos, Nigeria</p>
+        <p>✉️ hello@stylenest.com</p>
+        <p>📞 +234 800 000 0000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 StyleNest. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>Your Cart</h3>
+    <button class="icon-btn" onclick="toggleCartDrawer()" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items-list" id="cartItemsList"></div>
+  <div class="cart-empty-state" id="cartEmptyState">
+    <div class="icon">🛍</div>
+    <p>Your cart is empty</p>
+  </div>
+  <div class="cart-summary" id="cartSummary" style="display:none;"></div>
+</aside>
+
+<!-- ============ MOBILE BOTTOM NAV ============ -->
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-item" data-nav-link><span class="icon">⌂</span>Home</a>
+    <a href="shop.html" class="bottom-nav-item" data-nav-link><span class="icon">🛒</span>Shop</a>
+    <a href="#" class="bottom-nav-item"><span class="icon">♡</span>Wishlist<span class="badge-count" data-wishlist-count>0</span></a>
+    <button class="bottom-nav-item" onclick="toggleCartDrawer()"><span class="icon">🛍</span>Cart<span class="badge-count" data-cart-count>0</span></button>
+    <a href="contact.html" class="bottom-nav-item"><span class="icon">👤</span>Account</a>
+  </div>
+</nav>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.getElementById('featuredProductsGrid').innerHTML = getFeaturedProducts(8).map(p => `
+    <div class="product-card">
+      <div class="product-card-media">
+        <a href="product.html?id=${p.id}">
+          <img src="${p.image}" alt="${p.name}" loading="lazy">
+        </a>
+        <span class="discount-badge">-${p.discount}%</span>
+        <div class="product-card-actions">
+          <button class="circle-btn" data-wishlist-btn="${p.id}" onclick="toggleWishlist(${p.id})" aria-label="Add to wishlist">♡</button>
+        </div>
+        <a href="product.html?id=${p.id}" class="quick-view-btn">Quick View</a>
+      </div>
+      <div class="product-card-body">
+        <p class="product-card-category">${p.section} · ${p.category}</p>
+        <h3 class="product-card-name">${p.name}</h3>
+        ${renderStars(p.rating)}<span class="review-count">(${p.reviews})</span>
+        <div class="price-row">
+          <span class="price-current">${formatPrice(p.price)}</span>
+          <span class="price-old">${formatPrice(p.oldPrice)}</span>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    </div>
+  `).join('');
+  updateWishlistButtons();
+</script>
+</body>
+</html>
