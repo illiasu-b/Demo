@@ -93,4 +93,15 @@
 
 @media print {
   .site-header, .bottom-nav, .cart-drawer, .drawer-overlay, .sales-cta, .site-footer { display: none !important; }
+} /* Logo tagline */
+.logo { display: flex; flex-direction: column; line-height: 1.1; flex-shrink: 0; }
+.logo-tagline {
+  display: block;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted, #777);
+  white-space: nowrap;
+  margin-top: 2px;
 }
